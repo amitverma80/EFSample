@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\Github\Projects\EFSample\bin\Release\net6.0\publish\</_PublishTargetUrl>
+    <History>True|2022-10-29T10:50:42.9714519Z;True|2022-10-29T16:16:31.3030149+05:30;True|2022-10-29T14:22:03.6673123+05:30;True|2022-10-29T14:16:23.7129941+05:30;True|2022-10-29T14:02:37.9265027+05:30;True|2022-10-29T13:37:44.9392979+05:30;True|2022-10-29T12:29:04.1538312+05:30;</History>
+    <LastFailureDetails />
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="EFSampleContextConnectionString">
+      <Value>server = localhost%3b database = lib%3b user = root%3b password = test123</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="EFSample.Data.EFSampleDBContext">
+      <Value>server = localhost%3b database = lib%3b user = root%3b password = test123</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

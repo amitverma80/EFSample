@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword />
+    <History>True|2022-10-29T11:26:01.4328105Z;True|2022-10-29T16:54:43.4762998+05:30;False|2022-10-29T16:54:02.8440040+05:30;True|2022-10-29T16:39:29.0481789+05:30;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="EFSampleContextConnectionString">
+      <Value>server = localhost%3b database = Library%3b user = root%3b password = test123</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>
