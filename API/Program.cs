@@ -13,13 +13,6 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-//builder.Services.AddDbContext<EFSampleDBContext>(options =>
-//{
-//    var connectionString = builder.Configuration.GetConnectionString("EFSampleContextConnectionString");
-//    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
-//});
-
 builder.Services.AddDbContext<DatabaseContext>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("EFSampleContextConnectionString");
@@ -36,11 +29,6 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-//using (var scope = app.Services.CreateScope())
-//{
-//    var dataContext = scope.ServiceProvider.GetRequiredService<EFSampleDBContext>();
-//    dataContext.Database.Migrate();
-//}
 
 using (var scope = app.Services.CreateScope())
 {
@@ -52,13 +40,13 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 
+//Allo only my angular application
+app.UseCors(x=>x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));
+
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
-//app.MapControllerRoute(
-//    name: "default",
-//    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.MapControllers();
 

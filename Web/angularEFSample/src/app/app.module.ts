@@ -10,6 +10,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { PersonsListComponent } from './components/persons/persons-list/persons-list.component';
 
@@ -23,7 +24,8 @@ import { PersonsListComponent } from './components/persons/persons-list/persons-
     MatDialogModule,
     MatInputModule,
     MatTableModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

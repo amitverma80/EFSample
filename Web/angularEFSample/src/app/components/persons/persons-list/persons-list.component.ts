@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { person } from 'src/app/model/person.model';
 import { MatTableDataSource } from '@angular/material/table';
-
+import { PersonService } from 'src/app/core/services/person/person.service';
+/*
 const personData: person[] = [
   {
     id: 1,
@@ -22,25 +23,31 @@ const personData: person[] = [
     email: 'c@c.com',
   },
 ];
-
+*/
 @Component({
   selector: 'app-persons-list',
   templateUrl: './persons-list.component.html',
   styleUrls: ['./persons-list.component.scss'],
 })
 export class PersonsListComponent implements OnInit {
-
-  constructor() {}
+  constructor(private personService: PersonService) {}
 
   displayedColumns = ['id', 'firstName', 'lastName', 'email'];
   dataSource = new MatTableDataSource<person>();
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource<person>(personData);
+    //this.dataSource = new MatTableDataSource<person>(personData);
+    this.getPerson();
   }
   ngAfterViewInit() {
     // this.dataSource.sort = this.sort;
     // this.dataSource.paginator = this.paginator;
+  }
+
+  getPerson() {
+    this.personService.getPersons().subscribe((data) => {
+      console.log(data);
+    });
   }
 
   applyFilter(event: Event) {
