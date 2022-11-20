@@ -1,6 +1,6 @@
-# EFSample
+# .Net 6 Entity Framework Sample with Angular 14
 
-.Net 6 Entity Framework Sample with Angular 14
+This sample uses Unit Of Work concept
 
 For Angular follow below steps:
 
