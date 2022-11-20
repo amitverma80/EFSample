@@ -1,6 +1,7 @@
 ﻿using Domain;
 using Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.Runtime.CompilerServices;
 
 namespace API.Controllers
 {
@@ -12,7 +13,7 @@ namespace API.Controllers
 
         public PeopleController(IUnitOfWork unitOfWork)
         {
-            this._unitOfWork = unitOfWork;            
+            this._unitOfWork = unitOfWork;
         }
 
 
@@ -24,12 +25,12 @@ namespace API.Controllers
             return Ok(p);
         }
 
-        //[HttpGet]
-        //public ActionResult<IEnumerable<Person>> GetAll()
-        //{
-        //    var p = this._unitOfWork.Person.GetAll();
-
-        //    return Ok(p);
-        //}
+        [HttpPost]
+        public async Task<ActionResult> Save(Person person)
+        {
+           var t =  await this._unitOfWork.Person.AddAsync(person);
+           var result =  this._unitOfWork.Save();
+            return Ok(t);
+        }
     }
 }

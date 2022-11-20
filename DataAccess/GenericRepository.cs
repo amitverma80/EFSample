@@ -15,6 +15,13 @@ namespace DataAccess
         {
             this._context.Set<T>().Add(entity);
         }
+
+        public async Task<T> AddAsync(T entity)
+        {
+            await this._context.AddAsync(entity);
+            return entity;
+        }
+
         public void AddRange(IEnumerable<T> entities)
         {
             this._context.Set<T>().AddRange(entities);

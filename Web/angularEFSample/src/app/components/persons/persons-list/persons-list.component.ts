@@ -32,7 +32,7 @@ const personData: person[] = [
 export class PersonsListComponent implements OnInit {
   constructor(private personService: PersonService) {}
 
-  displayedColumns = ['id', 'firstName', 'lastName', 'email'];
+  displayedColumns = ['personId', 'name', 'age', 'address', 'email'];
   dataSource = new MatTableDataSource<person>();
 
   ngOnInit(): void {
@@ -47,6 +47,7 @@ export class PersonsListComponent implements OnInit {
   getPerson() {
     this.personService.getPersons().subscribe((data) => {
       console.log(data);
+      this.dataSource.data = data;
     });
   }
 

@@ -6,6 +6,8 @@ namespace Domain.Interfaces
     {
         void Add(T entity);
 
+        Task<T> AddAsync (T entity);
+
         void AddRange(IEnumerable<T> entities);
 
         IEnumerable<T>? Find(Expression<Func<T, bool>> expression);
