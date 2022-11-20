@@ -1,4 +1,4 @@
-# .Net 6 Entity Framework Sample Angular 14
+# .Net 6 Entity Framework Sample Angular 14 and MySQL
 
 This sample uses Unit Of Work concept
 
